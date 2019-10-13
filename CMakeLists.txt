@@ -26,6 +26,13 @@ TARGET_INCLUDE_DIRECTORIES( ${PROJECT_NAME} PUBLIC
 	../opencv-4.1.1/modules/photo/include
 	../opencv-4.1.1/modules/stitching/include
 	../opencv-4.1.1/modules/video/include
+
+#	../opencv-4.1.1/modules/gapi/include
+#	../opencv-4.1.1/modules/ts/include
+#	../opencv-4.1.1/modules/world/include
+#	../opencv-4.1.1/modules/java/include
+#	../opencv-4.1.1/modules/js/include
+#	../opencv-4.1.1/modules/python/include
 )
 
 FILE(GLOB CV_HEADERS
