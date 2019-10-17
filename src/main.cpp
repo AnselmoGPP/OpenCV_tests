@@ -3,5 +3,7 @@
 
 int main()
 {
-    show_image();
+    //show_image();
+    print_rectangle();
+    //get_histogram();
 }
