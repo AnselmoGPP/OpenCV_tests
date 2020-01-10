@@ -20,6 +20,10 @@ void show_image(){
     cv::imshow("Original", image);
 
     cv::waitKey(0);
+    
+    // close the window
+    cv::destroyWindow("Original");		// cv::destroyAllWindows();
+    image.release();
 }
 
 void print_rectangle(){
@@ -41,6 +45,8 @@ void print_rectangle(){
     cv::imwrite("Rectangle.jpg", image);
 
     cv::waitKey(0);
+    cv::destroyWindow("Original");		// cv::destroyAllWindows();
+    image.release();
 }
 
 void get_histogram(){
@@ -101,6 +107,9 @@ void get_histogram(){
     cv::imshow("Histogram", histImage);
 
     cv::waitKey(0);
+    cv::destroyAllWindows();
+    image.release();
+    histImage.release();
 }
 
 void get_LUT(){
@@ -129,6 +138,8 @@ void get_LUT(){
     imshow("Original", image);
 
     cv::waitKey(0);
+    cv::destroyWindow("Original");		// cv::destroyAllWindows();
+    image.release();
 }
 
 void color_space(){
@@ -170,6 +181,15 @@ void color_space(){
     cv::imshow("Value", hsv_planes[2]);
 
     cv::waitKey(0);
+    cv::destroyAllWindows();
+    imBGR.release();
+    bgr_planes[0].release();
+    bgr_planes[1].release();
+    bgr_planes[2].release();
+    imHSV.release();
+    hsv_planes[0].release();
+    hsv_planes[1].release();
+    hsv_planes[2].release();
 }
 
 void arithmetic(){
@@ -190,6 +210,8 @@ void arithmetic(){
     cv::imshow("DIVIDE", result);
 
     cv::waitKey(0);
+    cv::destroyAllWindows();
+    result.release();
 }
 
 void logic(){
@@ -214,6 +236,8 @@ void logic(){
     imshow("NOT", res);
 
     cv::waitKey(0);
+    cv::destroyAllWindows();
+    res.release();
 }
 
 void make_mask(){
@@ -238,6 +262,8 @@ void make_mask(){
     cv::imwrite("Ned_Stark_mask_2.jpg", image);
 
     cv::waitKey(0);
+    cv::destroyWindow("Original masked");		// cv::destroyAllWindows();
+    image.release();
 }
 
 void draw(){
@@ -261,7 +287,10 @@ void draw(){
     cv::putText(image, "Hello, image", cv::Point(100, 100), cv::FONT_HERSHEY_SIMPLEX, 3.5, cv::Scalar(0, 100, 200), 5, cv::LINE_AA);	// LINE_AA gives some antialiasing 
     
     cv::imshow("Original", image);
+
     cv::waitKey(0);
+    cv::destroyWindow("Original");
+    image.release();
 }
 
 

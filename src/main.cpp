@@ -1,3 +1,10 @@
+/*
+	Notes about OpenCV:
+		cv::waitKey(0) stops the execution and waits for user input to continue
+		If the function where an image is opened in a window is finished without closing the window, it will remain and you won't be able to close it normally.
+		If the program where an image is opened in a window is finished, the window will be closed.
+*/
+
 
 #include "header.hpp"
 #include <iostream>
@@ -19,7 +26,7 @@ int main()
               << "9  - Draw \n"
               << std::endl;
 
-    //do{
+    do{
         std::cout << "Select function: ";
         std::cin >> val;
         switch(val)
@@ -57,6 +64,6 @@ int main()
             std::cout << "Not valid option \n" << std::endl;
             break;
         }
-    //}while(val != 0);
+    }while(val != 0);
 }
 
